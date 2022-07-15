@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <title>Welcome to Client Management Software</title>
 
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/9.9.0/firebase-app-compat.js"></script>
@@ -107,6 +107,17 @@
     <p id="load">Firebase SDK Loading&hellip;</p>
 
     <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCExQsyksPdb5hIDNvbcSyE3ZjO6QZGvjY",
+            authDomain: "cms1-8d8e2.firebaseapp.com",
+            databaseURL: "https://cms1-8d8e2-default-rtdb.firebaseio.com",
+            projectId: "cms1-8d8e2",
+            storageBucket: "cms1-8d8e2.appspot.com",
+            messagingSenderId: "968650526599",
+            appId: "1:968650526599:web:29b17ceba8b91f80300d22"
+        };
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
         document.addEventListener('DOMContentLoaded', function() {
             const loadEl = document.querySelector('#load');
             // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
@@ -118,10 +129,12 @@
                 data.foreach(
                     (i) => {
 
+
                     }
                 );
 
             });
+
             // firebase.functions().httpsCallable('yourFunction')().then(() => { });
             // firebase.messaging().requestPermission().then(() => { });
             // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
@@ -131,24 +144,24 @@
             //
             // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-            try {
-                let app = firebase.app();
-                let features = [
-                    'auth',
-                    'database',
-                    'firestore',
-                    'functions',
-                    'messaging',
-                    'storage',
-                    'analytics',
-                    'remoteConfig',
-                    'performance',
-                ].filter(feature => typeof app[feature] === 'function');
-                loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-            } catch (e) {
-                console.error(e);
-                loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-            }
+            // try {
+            //     let app = firebase.app();
+            //     let features = [
+            //         'auth',
+            //         'database',
+            //         'firestore',
+            //         'functions',
+            //         'messaging',
+            //         'storage',
+            //         'analytics',
+            //         'remoteConfig',
+            //         'performance',
+            //     ].filter(feature => typeof app[feature] === 'function');
+            //     loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+            // } catch (e) {
+            //     console.error(e);
+            //     loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+            // }
         });
     </script>
 </body>
